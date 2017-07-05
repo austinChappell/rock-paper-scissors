@@ -1,8 +1,12 @@
 let bestOfNumber;
+let myScore;
+let computerScore;
 
 function getWinningScore() {
+  myScore = 0;
+  computerScore = 0;
   bestOfNumber = Number(prompt("Let's play 'Rock, Paper, Scissors.' Let's play best of: \n (Be sure it is an odd number)"));
-  if (typeof bestOfNumber === 'number' && bestOfNumber % 2 === 1) {
+  if (typeof bestOfNumber === 'number' && (bestOfNumber % 2 === 1 || bestOfNumber === 1)) {
     playGame();
   } else {
     getWinningScore();
@@ -16,8 +20,6 @@ let computer;
 let me;
 let message;
 const array = ['rock', 'paper', 'scissors'];
-let myScore = 0;
-let computerScore = 0;
 function announceScore() {
   alert('The score is \nYou: ' + myScore + ' Computer: ' + computerScore + '.');
 }
@@ -26,8 +28,6 @@ function assignment() {
   computer = array[option()];
   message = 'You chose ' + me + '. The computer chose ' + computer + '. ';
 }
-
-getWinningScore();
 
 function playGame() {
   let winningScore = bestOfNumber / 2;
@@ -42,6 +42,7 @@ function playGame() {
       computerScore++;
       if (computerScore > winningScore) {
         alert("You lost. The computer won " + computerScore + " to " + myScore + ". \nLet's play again!");
+        getWinningScore();
       } else {
         alert(message + 'The computer wins this round.');
         announceScore();
@@ -51,6 +52,7 @@ function playGame() {
       myScore++;
       if (myScore > winningScore) {
         alert("You win! You beat the computer " + myScore + " to " + computerScore + ". \nLet's play again!");
+        getWinningScore();
       } else {
         alert(message + 'You win this round.');
         announceScore();
