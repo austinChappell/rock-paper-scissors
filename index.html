@@ -3,9 +3,30 @@
   <head>
     <meta charset='utf-8'>
     <title></title>
+    <link rel='stylesheet' href='style.css' />
   </head>
   <body>
-    <script type='text/javascript' src='main.js'>
+    <h1>Let's Play Rock Paper Scissors!</h1>
+    <h2>What do you want to play to?</h2>
+    <input id='play-to' type='number' min='1' max='10' value='5' />
+    <div id='score-board'>
+      <span id='cpu'>CPU: <span id='cpu-score'>0</span></span>
+      <span>to</span>
+      <span id='user'>You: <span id='user-score'>0</span></span>
+    </div>
+    <div id='user-input'>
+      <button type="button" name="button" class='user-choice' id='rock-button'>Rock</button>
+      <button type="button" name="button" class='user-choice' id='paper-button'>Paper</button>
+      <button type="button" name="button" class='user-choice' id='scissors-button'>Scissors</button>
+    </div>
+    <div class="reset">
+      <button type="button" name="reset" id='reset-button'>Reset</button>
+    </div>
+    <p id='result-message'></p>
+    <!-- <script type='text/javascript' src='main.js'>
+    </script> -->
+    <script type="text/javascript" src='dom.js'>
+
     </script>
   </body>
 </html>
