@@ -1,4 +1,16 @@
 let rockButton = document.querySelector('#rock-button');
+
+/* Added by Jeff */
+
+let player1;
+function playerName() {
+  player1 = prompt("What is your name?");
+}
+playerName();
+document.getElementById("user").innerHTML = "<span>" + player1 + "</span";
+
+/* Prompts for name and prints on index.html */
+
 let paperButton = document.querySelector('#paper-button');
 let scissorsButton = document.querySelector('#scissors-button');
 let button = document.querySelectorAll('.user-choice');
@@ -13,6 +25,8 @@ let userScoreDOM = document.querySelector('#user-score');
 let playToSelection = document.querySelector('#play-to');
 let playTo = Number(playToSelection.value);
 let resetButton = document.querySelector('#reset-button')
+
+
 playToSelection.onchange = function() { clear() };
 
 function clear() {
