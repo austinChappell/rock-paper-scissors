@@ -1,4 +1,3 @@
-let rockButton = document.querySelector('#rock-button');
 
 /* Added by Jeff */
 
@@ -7,10 +6,12 @@ function playerName() {
   player1 = prompt("What is your name?");
 }
 playerName();
-document.getElementById("user").innerHTML = "<span>" + player1 + "</span";
+player1 += ": "
+document.getElementById("user").innerHTML = player1;
 
 /* Prompts for name and prints on index.html */
 
+let rockButton = document.querySelector('#rock-button');
 let paperButton = document.querySelector('#paper-button');
 let scissorsButton = document.querySelector('#scissors-button');
 let button = document.querySelectorAll('.user-choice');
